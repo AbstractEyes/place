@@ -18,6 +18,7 @@ const GUI = (cvs, glWindow, place) => {
 
 	const colorField = document.querySelector("#color-field");
 	const colorSwatch = document.querySelector("#color-swatch");
+	const colorPalette = document.querySelector("#color-palette");
 
 	// ***************************************************
 	// ***************************************************
@@ -129,6 +130,8 @@ const GUI = (cvs, glWindow, place) => {
 		colorField.value = hex;
 		colorSwatch.style.backgroundColor = hex;
 	});
+
+	
 
 	// ***************************************************
 	// ***************************************************

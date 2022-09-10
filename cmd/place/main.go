@@ -28,7 +28,7 @@ var saveInterval int
 
 func init() {
 	flag.StringVar(&port, "port", ":8080", "The address and port the fileserver listens at.")
-	flag.StringVar(&root, "root", "./root", "The directory serving files.")
+	flag.StringVar(&root, "root", "C:/Users/PHIL/Git/Personal/place/place/web/root", "The directory serving files.")
 	flag.StringVar(&loadPath, "load", "", "The png to load as the canvas.")
 	flag.StringVar(&savePath, "save", "./place.png", "The path to save the canvas.")
 	flag.StringVar(&logPath, "log", "", "The log file to write to.")
@@ -76,7 +76,7 @@ func main() {
 		Addr:         port,
 		Handler:      fs,
 	}
-	log.Fatal(server.ListenAndServe())
+	log.Fatal(server.ListenAndServeTLS("MyCertificate.crt", "MyKey.key"))
 }
 
 func loadImage(loadPath string) draw.Image {

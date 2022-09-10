@@ -60,7 +60,7 @@ func (sv *Server) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	case "ws":
 		sv.HandleSocket(w, req)
 	default:
-		http.Error(w, "Not found.", 404)
+		http.Error(w, "Invalid file request; Not found.", 404)
 	}
 }
 
